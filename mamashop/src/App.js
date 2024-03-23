@@ -18,7 +18,7 @@ function App() {
                 <Link className="nav-link" to="/">Products</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/products/create">Add Products</Link>
+                <Link className="nav-link" to="/products">Add Products</Link>
               </li>
             </ul>
           </div>
@@ -26,7 +26,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Products/>}/>
-          <Route path="/products/create" element={<Create/>}/>
+          <Route path="/products/" element={<Create/>}/>
           <Route path="/update/:id" element={<Update/>}/>
         </Routes>
 
