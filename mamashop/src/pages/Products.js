@@ -33,29 +33,33 @@ const Products = () => {
     <div className="container">
       <h1>Product List</h1>
       <div>
-        {products.map((product) => (
-          <div className="mt-2" key={product.id}>
-            <h2>{product.name}</h2>
-            <p>Cost: {product.cost}</p>
-            <p>Description: {product.description}</p>
-            <button
-              className="btn btn-outline-secondary btn-sm"
-              onClick={() => {
-                navigate(`/products/update/${product.id}`, {
-                  state: product,
-                });
-              }}
-            >
-              Update
-            </button>
-            <button
-              className="btn btn-outline-danger btn-sm"
-              onClick={() => handleDelete(product.id)}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <div className="mt-2" key={product.id}>
+              <h2>{product.name}</h2>
+              <p>Cost: {product.cost}</p>
+              <p>Description: {product.description}</p>
+              <button
+                className="btn btn-outline-secondary btn-sm"
+                onClick={() => {
+                  navigate(`/products/update/${product.id}`, {
+                    state: product,
+                  });
+                }}
+              >
+                Update
+              </button>
+              <button
+                className="btn btn-outline-danger btn-sm"
+                onClick={() => handleDelete(product.id)}
+              >
+                Delete
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No products found</p>
+        )}
       </div>
     </div>
   );
