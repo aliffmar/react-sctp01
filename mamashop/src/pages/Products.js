@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const res = await axios.get(dbLink + '/products');
+        const res = await axios.get(dbLink);
         setProducts(res.data.products);
       } catch (err) {
         console.log(err);
@@ -25,7 +25,7 @@ const Products = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${dbLink}/products/${id}`);
+      await axios.delete(`${dbLink}/${id}`);
       setProducts(products.filter((product) => product.id !== id));
     } catch (err) {
       console.log(err);
