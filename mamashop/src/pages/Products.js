@@ -20,7 +20,8 @@ const Products = () => {
     fetchAllProducts();
   }, []);
 
-  console.log(products); // Move console.log here
+  // Move console.log here if you want to log products after they are fetched
+  console.log(products);
 
   const handleDelete = async (id) => {
     try {
@@ -60,7 +61,7 @@ const Products = () => {
             </div>
           ))
         ) : (
-          <p>No products found</p>
+          <p>Loading...</p>
         )}
       </div>
     </div>
