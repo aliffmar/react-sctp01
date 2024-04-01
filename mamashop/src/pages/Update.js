@@ -24,7 +24,7 @@ const Update = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${dbLink}/products/${productId}`, product);
+      await axios.put(`${dbLink}/${productId}`, product);
       navigate('/products');
     } catch (err) {
       console.log(err);
