@@ -20,9 +20,6 @@ const Products = () => {
     fetchAllProducts();
   }, []);
 
-  // Move console.log here if you want to log products after they are fetched
-  console.log(products);
-
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${dbLink}/${id}`);
@@ -36,7 +33,7 @@ const Products = () => {
     <div className="container">
       <h1>Product List</h1>
       <div>
-        {products.length > 0 ? (
+        {products ? (
           products.map((product) => (
             <div className="mt-2" key={product.id}>
               <h2>{product.name}</h2>
