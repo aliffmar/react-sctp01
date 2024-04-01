@@ -26,7 +26,7 @@ const Create = () => {
     e.preventDefault();
     try {
       // Replace 'dbLink' with your backend API endpoint for creating products
-      await axios.post(dbLink, product);
+      await axios.post(dbLink + '/create', product);
       navigate('/'); // Navigate to the desired route after successful creation
     } catch (err) {
       console.log(err);
