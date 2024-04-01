@@ -20,6 +20,8 @@ const Products = () => {
     fetchAllProducts();
   }, []);
 
+  console.log(products); // Move console.log here
+
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${dbLink}/products/${id}`);
